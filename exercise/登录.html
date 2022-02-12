@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body{
+            background-color: #1F2029;
+        }
+
+        .box{
+            width: 690px;
+            height: 100vh;
+            margin: 100px auto;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            box-sizing: border-box;
+            background-color: #1F2029;
+        }
+
+        .box .loginBox{
+            width: 440px;
+            height: 100%;
+            text-align: center;
+            padding: 20px 0;
+            box-sizing: border-box;
+
+            perspective: 700px;
+            transform-style: preserve-3d;
+        }
+        h6>span{
+            color: #C4C3CA;
+            padding: 3px 24px;
+            font-size: 18px;
+        }
+        label{
+            width: 60px;
+            height: 16px;
+            margin: 1px;
+        }
+
+
+
+        label>input{
+            display: none;
+        }
+
+        label>div{
+            width: 60px;
+            height: 12px;
+            background-color: #fff;
+            border-radius: 20px;
+            margin: 10px auto;
+            position: relative;
+        }
+
+        
+
+        label>div>svg{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #102770;
+            position: absolute;
+            left: -7px;
+            top: -9px;
+            font-size: 0;
+            color: yellow;
+            cursor: pointer;
+
+            transition: all 1s;
+        }
+
+        label>div>svg.active{
+            transform: translateX( 40px ) rotateZ( -270deg );
+        }
+
+        .interface{
+            width: 440px;
+            height: 400px;
+            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg') no-repeat center center/cover;
+            background-color: #2A2B38;
+
+            padding: 0 30px;
+            box-sizing: border-box;
+
+            perspective: 500px;
+            transform-style: preserve-3d;
+
+            transition: all 1s;
+
+        }
+        .interface.active{
+            transform: rotateY( 180deg );
+        }
+
+
+
+        .box .loginBox .interface .login{
+            width: 100%;
+            padding: 0 30px;
+            box-sizing: border-box;
+
+            transform: translateZ( 30px );
+        }
+
+        .box .loginBox .interface .login h3{
+            color: #B5B4BC;
+            display: inline-block;
+            margin: 50px 0;
+        }
+
+        .box .loginBox .interface .login input{
+            background-color: #1F2029;
+            border: none;
+            outline: none;
+            height: 45px;
+            width: 100%;
+            margin-top: 10px;
+            text-indent: 3em;
+            color: #B5B4BC;
+            padding:  0;
+            box-sizing: border-box;
+        }
+
+        .box .loginBox .interface .login .icon1{
+            position: relative;
+        }
+
+        .box .loginBox .interface .login .icon1::after{
+            content: "@";
+            position: absolute;
+            left: 18px;
+            top: 3px;
+            color: #FFEBA7;
+        }
+
+        .box .loginBox .interface .login .icon2{
+            position: relative;
+            color: #FFEBA7;
+        }
+        .box .loginBox .interface .login svg{
+            position: absolute;
+            left: 18px;
+            top: 4px;
+            z-index: 10;
+        }
+
+        .box .loginBox .interface .login button{
+            display: block;
+            width: 70px;
+            height: 40px;
+            border-radius: 4px;
+            outline: none;
+            border: none;
+            background-color: #FFEBA7;
+            margin: 25px auto;
+        }
+
+        .box .loginBox .interface .login a{
+            color: #B5B4BB;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+        }
+        
+        .box .loginBox .interface .pologin{
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            padding: 0 30px;
+            box-sizing: border-box;
+
+            
+            transform: translateZ( -30px ) rotateY( 180deg );
+        }
+
+        .box .loginBox .interface .pologin h3{
+            color: #B5B4BC;
+            display: inline-block;
+            margin: 50px 0;
+        }
+
+        .box .loginBox .interface .pologin input{
+            background-color: #1F2029;
+            border: none;
+            outline: none;
+            height: 45px;
+            width: 100%;
+            margin-top: 10px;
+            text-indent: 3em;
+            color: #B5B4BC;
+            padding:  0;
+            box-sizing: border-box;
+        }
+
+        .box .loginBox .interface .pologin .icon1{
+            position: relative;
+        }
+
+        .box .loginBox .interface .pologin .icon1::after{
+            content: "@";
+            position: absolute;
+            left: 18px;
+            top: 3px;
+            color: #FFEBA7;
+        }
+
+
+        .box .loginBox .interface .pologin .icon2{
+            position: relative;
+            color: #FFEBA7;
+        }
+        .box .loginBox .interface .pologin svg{
+            position: absolute;
+            left: 18px;
+            top: 4px;
+            z-index: 10;
+        }
+
+        .box .loginBox .interface .pologin .icon3{
+            position: relative;
+            color: #FFEBA7;
+        }
+        
+        .box .loginBox .interface .pologin button{
+            display: block;
+            width: 70px;
+            height: 40px;
+            border-radius: 4px;
+            outline: none;
+            border: none;
+            background-color: #FFEBA7;
+            margin: 25px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="loginBox">
+            <h6>
+                <span>登录</span>
+                <span>注册</span>
+            </h6>
+
+
+
+            <label class="check">
+                <input type="checkbox">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-left" viewBox="-3 -3 22 22">
+                    <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0v-6z"/>
+                  </svg>
+                </div>
+            </label>
+
+
+
+            <div class="interface">
+
+                <!-- 登录 -->
+                <div class="login">
+                    <h3>登录</h3>
+
+                    <span class="icon1">
+                        <input type="text" placeholder="密码">
+                    </span>
+
+                    <span class="icon2">
+                        <input type="text" placeholder="邮箱"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+                        </svg>
+                    </span>
+                    <button>提交</button>
+                    <a href="#">忘记密码？</a>
+                </div>
+
+                <!-- 注册 -->
+                <div class="pologin">
+                    <h3>注册</h3>
+
+                    <span class="icon3">
+                        <input type="text" placeholder="密码">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                          </svg>
+                    </span>
+
+                    <span class="icon1">
+                        <input type="text" placeholder="密码">
+                    </span>
+
+                    <span class="icon2">
+                        <input type="text" placeholder="邮箱"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+                        </svg>
+                    </span>
+                    <button>注册</button>
+                </div>
+               
+            </div>            
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        let svg = document.querySelector( "label>div>svg" );
+        svg.onclick=function(){
+            console.log( $( ".check input" ).prop( "checked" )  )
+            if( $( ".check input" ).prop( "checked" ) ){
+                $( this ).addClass( "active" );
+
+                $( ".interface" ).addClass( "active" )
+
+            }else{
+                $( this ).removeClass( "active" );
+
+                $( ".interface" ).removeClass( "active" )
+            }
+        }
+
+
+    </script>
+</body>
+</html>
